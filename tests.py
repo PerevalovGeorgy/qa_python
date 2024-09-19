@@ -18,7 +18,8 @@ class TestBooksCollector:
 
         # проверяем, что добавилось именно две
         # словарь books_rating, который нам возвращает метод get_books_rating, имеет длину 2
-        assert len(collector.get_books_rating()) == 2
+        #исправлен вызов метода с get_books_rating на get_books_genre = проверен метод add_new_book
+        assert len(collector.get_books_genre()) == 2
 
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
@@ -87,7 +88,7 @@ class TestBooksCollector:
         collector = BooksCollector()
 
         collector.add_new_book('Книга 1')
-        collector.set_book_genre('Книга 1', 'Детективы')
+        # убрал строку с добавлением жанра, действительно можно и без нее
 
         collector.add_book_in_favorites('Книга 1')
 
